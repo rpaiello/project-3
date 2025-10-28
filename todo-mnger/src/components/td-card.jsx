@@ -39,3 +39,5 @@ function ToDoCard({title, body, id, deleteCard}) {
         </div>
     )
 }
+
+export default ToDoCard;
