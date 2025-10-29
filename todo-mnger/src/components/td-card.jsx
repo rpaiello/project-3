@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import 'td-card.css'
+import './td-card.css'
 
-function ToDoCard({title, body, id, deleteCard}) {
+function ToDoCard({title, body, id, index, deleteCard}) {
     const [checked, setChecked] = useState(false);
+    const now = new Date();
+    
+    console.log(body);
 
     const del = () => {
         deleteCard(id);
@@ -22,7 +25,8 @@ function ToDoCard({title, body, id, deleteCard}) {
 
     return (
         <div className="todo-card">
-            <p>{id.getMonth()} {id.getDate()} {id.getHours()}:{id.getMinutes()}</p>
+            <h4>#{index}</h4>
+            <p>{now.getMonth()} {now.getDate()} {now.getHours()}:{now.getMinutes()}</p>
             <hr />
             <div className="form-row">
                 <div>
@@ -30,9 +34,9 @@ function ToDoCard({title, body, id, deleteCard}) {
                         <input type="checkbox" checked={checked} onChange={handleCheck} />
                     </form>
                 </div>
+                    {/* <h4 id="title">{title}</h4>
+                    <p id="body">{body}</p> */}
                 <div>
-                    <h4 id="title">{title}</h4>
-                    <p id="body">{body}</p>
                 </div>
             </div>
             <p className="del" onClick={del}></p>
