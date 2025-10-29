@@ -11,7 +11,7 @@ function ToDoApp() {
     }
 
     const addCard = (title, body) => {
-        const newCard = {title: title, body: body, id: Date.now()};
+        const newCard = {title: title, body: body, id: new Date()};
         setCards([...cards, newCard]);
     }
 

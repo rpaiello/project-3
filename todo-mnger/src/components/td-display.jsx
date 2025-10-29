@@ -6,7 +6,7 @@ function ToDoDisplay({cards, deleteCard}) {
     return (
         <div className="todo-container">
             {cards.map((card, index) => 
-            <ToDoCard key={card.id} title={card.title} body={card.body} id={card.id} index={index+1} deleteCard={deleteCard}/>
+            <ToDoCard key={card.id} title={card.title} body={card.body} id={card.id} index={index+1} deleteCard={deleteCard} />
         )}
         </div>
     )

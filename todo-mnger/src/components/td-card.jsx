@@ -1,32 +1,29 @@
 import { useState } from 'react';
+import * as ReactDOM from 'react-dom'
 import './td-card.css'
 
 function ToDoCard({title, body, id, index, deleteCard}) {
     const [checked, setChecked] = useState(false);
-    const now = new Date();
-    
-    console.log(body);
+    const [month, dayOf, hour, minute] = [id.getMonth(), id.getDate(), id.getHours() < 10 ? `0${id.getHours()}` : id.getHours(), id.getMinutes() < 10 ? `0${id.getMinutes()}` : id.getMinutes()]
 
     const del = () => {
         deleteCard(id);
     }
 
     const handleCheck = (event) => {
-        const [thisTitle, thisBody] = [event.target.closest('#title'), event.target.closest('#body')];
+        const self = document.querySelector(`#id${id.getTime()}`);
         setChecked(!checked);
-        if (checked) {
-            thisTitle.style.textDecoration = `line-through`;
-            thisBody.style.textDecoration = `line-through`;
+        if (!checked) {
+            self.style.textDecoration = `line-through`;
         } else {
-            thisTitle.style.textDecoration = `none`;
-            thisBody.style.textDecoration = `none`;
+            self.style.textDecoration = `none`;
         }
     }
 
     return (
         <div className="todo-card">
             <h4>#{index}</h4>
-            <p>{now.getMonth()} {now.getDate()} {now.getHours()}:{now.getMinutes()}</p>
+            <p>{month}-{dayOf} {hour}:{minute}</p>
             <hr />
             <div className="form-row">
                 <div>
@@ -34,12 +31,12 @@ function ToDoCard({title, body, id, index, deleteCard}) {
                         <input type="checkbox" checked={checked} onChange={handleCheck} />
                     </form>
                 </div>
-                    {/* <h4 id="title">{title}</h4>
-                    <p id="body">{body}</p> */}
-                <div>
+                <div id={`id${id.getTime()}`}>
+                    <h4>{title}</h4>
+                    <p>{body}</p>
                 </div>
             </div>
-            <p className="del" onClick={del}></p>
+            <p className="del" onClick={del}>delete?</p>
         </div>
     )
 }
