@@ -1,3 +1,43 @@
 .form-row {
     display: flex;
 }
+
+.todo-card {
+    width: 20%;
+    background-color: rgb(197, 197, 197);
+    padding: 10px;
+    border: 3px solid lightgrey;
+    border-radius: 4px;
+    box-shadow: 5px 5px 3px gray;
+}
+
+#index {
+    font-size: 40px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.metainfo {
+    background-color: rgb(247, 243, 239);
+    padding: 3px;
+}
+
+.del {
+    color: firebrick;
+    text-decoration: underline;
+}
+
+.del:hover {
+    font-weight: bold;
+}
+
+input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+#title {
+    font-size: 1.2em
+}
+#body {
+    line-height: 0%;
+}

@@ -21,18 +21,19 @@ function ToDoCard({title, body, id, index, deleteCard}) {
 
     return (
         <div className="todo-card">
-            <h4>#{index+1}</h4>
-            <p>{month}-{dayOf} {hour}:{minute}</p>
+            <div className="metainfo">
+                <span id='index'>#{index+1}</span>
+                <br />
+                <span>{month}-{dayOf} {hour}:{minute}</span>
+            </div>
             <hr />
             <div className="form-row">
                 <div>
-                    <form>
-                        <input type="checkbox" checked={checked} onChange={handleCheck} />
-                    </form>
+                    <input type="checkbox" checked={checked} onChange={handleCheck} />
                 </div>
-                <div id={`id${id.getTime()}`}>
-                    <h4>{title}</h4>
-                    <p>{body}</p>
+                <div className='bodytext' id={`id${id.getTime()}`}>
+                    <b id='title'>{title}</b>
+                    <p id='body'>{body}</p>
                 </div>
             </div>
             <p className="del" onClick={del}>delete?</p>

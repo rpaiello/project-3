@@ -1,0 +1,20 @@
+.form-row>div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+input {
+    font-family: monospace;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.3em
+}

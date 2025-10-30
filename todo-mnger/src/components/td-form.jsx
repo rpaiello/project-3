@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './td-form.css';
 
 function ToDoForm({addCard}) {
     const [title, setTitle] = useState("");
@@ -26,11 +27,13 @@ function ToDoForm({addCard}) {
             <div className="form-row">
                 <div>
                     <label htmlFor="formTitle">Title</label>
+                    <br />
                     <input type="text" name="formTitle" id="formTitle" value={title} placeholder='ex. "Go Shopping"' onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="formBody">Body</label>
-                    <textarea name="formBody" id="formBody" value={body} placeholder='ex. "Milk, Eggs, Cheese..."' onChange={handleChange}></textarea>
+                    <br />
+                    <textarea name="formBody" id="formBody" value={body} placeholder='ex. "Milk, Eggs, Cheese..."' onChange={handleChange} rows={3}></textarea>
                 </div>
                 <div>
                     <input type="submit" onClick={handleSubmit}/>
