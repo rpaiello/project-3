@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as ReactDOM from 'react-dom'
+import { useEffect, useState } from 'react';
 import './td-card.css'
 
 function ToDoCard({title, body, id, index, deleteCard}) {
@@ -10,7 +9,7 @@ function ToDoCard({title, body, id, index, deleteCard}) {
         deleteCard(id);
     }
 
-    const handleCheck = (event) => {
+    const handleCheck = () => {
         const self = document.querySelector(`#id${id.getTime()}`);
         setChecked(!checked);
         if (!checked) {
@@ -22,7 +21,7 @@ function ToDoCard({title, body, id, index, deleteCard}) {
 
     return (
         <div className="todo-card">
-            <h4>#{index}</h4>
+            <h4>#{index+1}</h4>
             <p>{month}-{dayOf} {hour}:{minute}</p>
             <hr />
             <div className="form-row">
