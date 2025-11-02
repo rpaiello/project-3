@@ -1,0 +1,22 @@
+.small {
+    font-size: 0.7em;
+    color: grey;
+}
+
+.form-row {
+    display: flex;
+}
+
+.form-row>div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+input {
+    font-family: monospace;
+    width: 100%
+}
+
+textarea {
+    width: 100%
+}

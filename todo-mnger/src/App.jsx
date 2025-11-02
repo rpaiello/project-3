@@ -5,17 +5,19 @@ import ContactForm from './components/contactform'
 import './App.css'
 
 function App() {
+  const [elem, setElem] = useState('todo');
+
   return (
     <>
         <BrowserRouter>
           <nav>
-            <Link to={"/todo"} className='active'>todo manager</Link> / {" "}
-            <Link to={"/contact"}>contact</Link>
+            <Link to={"/project-3/todo"} className='active' id='todo' >todo manager</Link> / {" "}
+            <Link to={"/project-3/contact"} id='contact' >contact</Link>
           </nav>
           <br />
           <Routes>
-            <Route path='/todo' element={<ToDoApp />}></Route>
-            <Route path='/contact' element={<ContactForm />}></Route>
+            <Route path='/project-3/todo' element={<ToDoApp />}></Route>
+            <Route path='/project-3/contact' element={<ContactForm />}></Route>
           </Routes>
         </BrowserRouter>
     </>
